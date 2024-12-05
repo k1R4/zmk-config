@@ -13,6 +13,7 @@
 
         mail_one: mail_one {
             compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
             bindings = <&macro_tap &kp S &kp S &kp R &kp I &kp J &kp I &kp I &kp T &kp H &kp AT &kp G &kp M &kp A &kp I &kp L &kp DOT &kp C &kp O &kp M>;
         };
     };
