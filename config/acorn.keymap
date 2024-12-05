@@ -73,12 +73,12 @@
         raise_layer {
             display-name = "raise";
 // -----------------------------------------------------------------------------------------
-// |  ESC |BTCLR| BT0 | BT1 | BT2 |BTDSC|   |  ^  |  &  |  *  |  (  |  )  | BSPC|
+// |  ESC |BTCLR| BT0 | BT1 | BT2 | BT3 |   |  ^  |  &  |  *  |  (  |  )  | BSPC|
 // | SHFT |  W1 |  W2 |  W3 |  W4 |  W5 |   | MAIL| LEFT| DOWN|  UP |RIGHT|  -  |
 // | CTRL |  W6 |  W7 |  W8 |  W9 | QWRT|   |  |  |  [  |  ]  |  {  |  }  |  =  |
 //                    | LWR | GUI | SPC |   | ENT | TAB | RSE |
             bindings = <
-&kp ESC  &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_DISC  &kp CARET   &kp AMPS   &kp ASTRK &kp LPAR  &kp RPAR &kp BSPC
+&kp ESC  &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &kp CARET   &kp AMPS   &kp ASTRK &kp LPAR  &kp RPAR &kp BSPC
 &kp LSHFT &kp LG(N1) &kp LG(N2) &kp LG(N3) &kp LG(N4) &kp LG(N5)   &mail_one   &kp LEFT &kp DOWN &kp UP &kp RIGHT &kp MINUS
 &kp LCTRL &kp LG(N6) &kp LG(N7) &kp LG(N8) &kp LG(N9) &tog 1     &kp PIPE   &kp LBKT  &kp RBKT &kp LBRC &kp RBRC &kp EQUAL
                 &mo 2  &mt LGUI FSLH  &kp SPACE      &kp RET  &kp TAB   &mo 3
