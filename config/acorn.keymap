@@ -31,12 +31,12 @@
 // |  ESC |  '  |  ,  |  .  |  P  |  Y  |   |  F  |  G   |  C  |  R  |  L  |BSPC|
 // | SHFT |  A  |  O  |  E  |  U  |  I  |   |  D  |  H   |  T  |  N  |  S  |  - |
 // | CTRL |  ;  |  Q  |  J  |  K  |  X  |   |  B  |  M   |  W  |  V  |  Z  |  = |
-//                    | LWR | GUI | SPC |   | ENT | TAB  | RSE |
+//                    | LWR | ALT | SPC |   | ENT | TAB  | RSE |
             bindings = <
 &kp ESC   &kp SQT &kp COMMA &kp DOT &kp P &kp Y   &kp F &kp G  &kp C  &kp R   &kp L   &kp BSPC
 &kp LSHFT &kp A &kp O &kp E &kp U &kp I   &kp D &kp H  &kp T     &kp N   &kp S &kp MINUS
 &kp LCTRL &kp SEMI &kp Q &kp J &kp K &kp X   &kp B &kp M  &kp W &kp V &kp Z &kp EQUAL
-                &mo 2 &mt LGUI FSLH &kp SPACE   &kp RET &kp TAB &mo 3
+                &mo 2 &mt LALT FSLH &kp SPACE   &kp RET &kp TAB &mo 3
             >;
         };
 
@@ -46,12 +46,12 @@
 // |  ESC |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  |BSPC|
 // | SHFT |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  ' |
 // | CTRL |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  |  1 |
-//                    | LWR | GUI | SPC |   | ENT | TAB  | RSE |
+//                    | LWR | ALT | SPC |   | ENT | TAB  | RSE |
             bindings = <
 &kp ESC   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I  &kp O   &kp P  &kp LBKT
 &kp LSHFT &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
 &kp LCTRL &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp N1
-                &mo 2 &mt LGUI FSLH &kp SPACE   &kp RET &kp TAB &mo 3
+                &mo 2 &mt LALT FSLH &kp SPACE   &kp RET &kp TAB &mo 3
             >;
         };
 
@@ -61,12 +61,12 @@
 // |  ESC |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  |  `  |
 // | SHFT |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  |  ~  |
 // | CTRL | UND | CUT | CPY | PST |  |  |   |  /  |  [  |  ]  |  {  |  }  |  \  |
-//                    | LWR | GUI | SPC |   | ENT | TAB | RSE |
+//                    | LWR | ALT | SPC |   | ENT | TAB | RSE |
             bindings = <
 &kp ESC  &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET   &kp AMPS   &kp ASTRK &kp LPAR  &kp RPAR &kp GRAVE
 &kp LSHFT &kp N1 &kp N2 &kp N3 &kp N4 &kp N5   &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &kp TILDE
 &kp LCTRL &kp LC(Z) &kp LC(X) &kp LC(C) &kp LC(V) &kp PIPE   &kp FSLH   &kp LBKT  &kp RBKT &kp LBRC &kp RBRC &kp BSLH
-                &mo 2  &mt LGUI FSLH  &kp SPACE      &kp RET  &kp TAB   &mo 3
+                &mo 2  &mt LALT FSLH  &kp SPACE      &kp RET  &kp TAB   &mo 3
             >;
         };
 
@@ -76,12 +76,12 @@
 // |  ESC |BTCLR| BT0 | BT1 | BT2 | BT3 |   |  ^  |  &  |  *  |  (  |  )  | BSPC|
 // | SHFT |  W1 |  W2 |  W3 |  W4 |  W5 |   | MAIL| LEFT| DOWN|  UP |RIGHT|  -  |
 // | CTRL |  W6 |  W7 |  W8 |  W9 | QWRT|   |  |  |  [  |  ]  |  {  |  }  |  =  |
-//                    | LWR | GUI | SPC |   | ENT | TAB | RSE |
+//                    | LWR | ALT | SPC |   | ENT | TAB | RSE |
             bindings = <
 &kp ESC  &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &kp CARET   &kp AMPS   &kp ASTRK &kp LPAR  &kp RPAR &kp BSPC
-&kp LSHFT &kp LG(N1) &kp LG(N2) &kp LG(N3) &kp LG(N4) &kp LG(N5)   &mail_one   &kp LEFT &kp DOWN &kp UP &kp RIGHT &kp MINUS
-&kp LCTRL &kp LG(N6) &kp LG(N7) &kp LG(N8) &kp LG(N9) &tog 1     &kp PIPE   &kp LBKT  &kp RBKT &kp LBRC &kp RBRC &kp EQUAL
-                &mo 2  &mt LGUI FSLH  &kp SPACE      &kp RET  &kp TAB   &mo 3
+&kp LSHFT &kp LA(N1) &kp LA(N2) &kp LA(N3) &kp LA(N4) &kp LA(N5)   &mail_one   &kp LEFT &kp DOWN &kp UP &kp RIGHT &kp MINUS
+&kp LCTRL &kp LA(N6) &kp LA(N7) &kp LA(N8) &kp LA(N9) &tog 1     &kp PIPE   &kp LBKT  &kp RBKT &kp LBRC &kp RBRC &kp EQUAL
+                &mo 2  &mt LALT FSLH  &kp SPACE      &kp RET  &kp TAB   &mo 3
             >;
         };
 
