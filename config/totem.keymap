@@ -41,7 +41,7 @@
 //          +-----+-----+-----+-----+-----+         +-----+-----+-----+-----+-----+
 //          |  A  |  O  |  E  |  U  |  I  |         |  D  |  H  |  T  |  N  |  S  |
 //    +-----+-----+-----+-----+-----+-----+         +-----+-----+-----+-----+-----+-----+
-//    |CTRL |  ;  |  Q  |  J  |  K  |  X  |         |  B  |  M  |  W  |  V  |  Z  |  =  |
+//    |SHFT |  ;  |  Q  |  J  |  K  |  X  |         |  B  |  M  |  W  |  V  |  Z  |  =  |
 //    +-----+-----+-----+-----+-----+-----+         +-----+-----+-----+-----+-----+-----+
 //                         +-----+-----+-----+   +-----+-----+-----+
 //                         | LWR | GUI/| SPC |   | ENT | TAB | RSE |
@@ -49,7 +49,7 @@
             bindings = <
                 &kp SQT   &kp COMMA &kp DOT &kp P &kp Y      &kp F &kp G  &kp C     &kp R     &kp L
                 &kp A     &kp O     &kp E   &kp U &kp I      &kp D &kp H  &kp T     &kp N     &kp S
-                &kp LCTRL &kp SEMI  &kp Q   &kp J &kp K &kp X &kp B &kp M  &kp W     &kp V     &kp Z     &kp EQUAL
+                &kp LSHFT &kp SEMI  &kp Q   &kp J &kp K &kp X &kp B &kp M  &kp W     &kp V     &kp Z     &kp EQUAL
                                       &mo 2  &mt LGUI FSLH    &kp SPACE    &kp RET   &kp TAB   &mo 3
             >;
         };
