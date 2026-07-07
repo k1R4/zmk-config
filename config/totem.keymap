@@ -4,6 +4,32 @@
 #include <dt-bindings/zmk/pointing.h>
 
 / {
+    behaviors {
+        hml: home_row_mod_left {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <125>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 26 27 28 29 30 31 35 36 37>;
+            hold-trigger-on-release;
+        };
+
+        hmr: home_row_mod_right {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <125>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 25 32 33 34>;
+            hold-trigger-on-release;
+        };
+    };
+
     combos {
         compatible = "zmk,combos";
 
@@ -39,18 +65,18 @@
 //          +-----+-----+-----+-----+-----+         +-----+-----+-----+-----+-----+
 //          |  '  |  ,  |  .  |  P  |  Y  |         |  F  |  G  |  C  |  R  |  L  |
 //          +-----+-----+-----+-----+-----+         +-----+-----+-----+-----+-----+
-//          |  A  |  O  |  E  |  U  |  I  |         |  D  |  H  |  T  |  N  |  S  |
+//          |  A  |C/O  |S/E  |G/U  |  I  |         |  D  |G/H  |S/T  |C/N  |  S  |
 //    +-----+-----+-----+-----+-----+-----+         +-----+-----+-----+-----+-----+-----+
-//    |SHFT |  ;  |  Q  |  J  |  K  |  X  |         |  B  |  M  |  W  |  V  |  Z  |  =  |
+//    | ESC |  ;  |  Q  |  J  |  K  |  X  |         |  B  |  M  |  W  |  V  |  Z  |  =  |
 //    +-----+-----+-----+-----+-----+-----+         +-----+-----+-----+-----+-----+-----+
 //                         +-----+-----+-----+   +-----+-----+-----+
-//                         | LWR | GUI/| SPC |   | ENT | TAB | RSE |
+//                         | LWR | GUI | SPC |   | ENT |  <- | RSE |
 //                         +-----+-----+-----+   +-----+-----+-----+
             bindings = <
-                &kp SQT   &kp COMMA &kp DOT &kp P &kp Y      &kp F &kp G  &kp C     &kp R     &kp L
-                &kp A     &kp O     &kp E   &kp U &kp I      &kp D &kp H  &kp T     &kp N     &kp S
-                &kp LSHFT &kp SEMI  &kp Q   &kp J &kp K &kp X &kp B &kp M  &kp W     &kp V     &kp Z     &kp EQUAL
-                                      &mo 2  &mt LGUI FSLH    &kp SPACE    &kp RET   &kp TAB   &mo 3
+                &kp SQT   &kp COMMA &kp DOT &kp P    &kp Y      &kp F   &kp G    &kp C     &kp R     &kp L
+                &kp A     &hml LCTRL O &hml LSHFT E &hml LGUI U &kp I      &kp D   &hmr LGUI H &hmr LSHFT T &hmr LCTRL N &kp S
+       &kp ESC  &kp SEMI  &kp Q     &kp J   &kp K    &kp X      &kp B   &kp M    &kp W     &kp V     &kp Z  &kp EQUAL
+                                    &mo 2   &kp LGUI &kp SPACE  &kp RET &kp BSPC &mo 3
             >;
         };
 
@@ -64,13 +90,13 @@
 //    |CTRL |  Z  |  X  |  C  |  V  |  B  |         |  N  |  M  |  ,  |  .  |  /  |  1  |
 //    +-----+-----+-----+-----+-----+-----+         +-----+-----+-----+-----+-----+-----+
 //                         +-----+-----+-----+   +-----+-----+-----+
-//                         | LWR | GUI/| SPC |   | ENT | TAB | RSE |
+//                         | LWR | GUI | SPC |   | ENT | TAB | RSE |
 //                         +-----+-----+-----+   +-----+-----+-----+
             bindings = <
                 &kp ESC   &kp Q &kp W &kp E &kp R      &kp Y &kp U &kp I     &kp O   &kp P
                 &kp LSHFT &kp A &kp S &kp D &kp F      &kp H &kp J &kp K     &kp L   &kp SEMI
-                &kp LCTRL &kp Z &kp X &kp C &kp V &kp B &kp N &kp M &kp COMMA &kp DOT &kp FSLH &kp N1
-                                &mo 2 &mt LGUI FSLH    &kp SPACE   &kp RET   &kp TAB &mo 3
+      &kp LCTRL &kp Z     &kp X &kp C &kp V &kp B      &kp N &kp M &kp COMMA &kp DOT &kp FSLH &kp N1
+                             &mo 2 &kp LGUI &kp SPACE  &kp RET   &kp TAB &mo 3
             >;
         };
 
@@ -81,16 +107,16 @@
 //          +-----+-----+-----+-----+-----+         +-----+-----+-----+-----+-----+
 //          |  1  |  2  |  3  |  4  |  5  |         |  6  |  7  |  8  |  9  |  0  |
 //    +-----+-----+-----+-----+-----+-----+         +-----+-----+-----+-----+-----+-----+
-//    |CTRL |UNDO | CUT | CPY | PST |PIPE |         |  /  |  [  |  ]  |  {  |  }  |  \  |
+//    | ESC |UNDO | CUT | CPY | PST |PIPE |         |  /  |  [  |  ]  |  {  |  }  |  \  |
 //    +-----+-----+-----+-----+-----+-----+         +-----+-----+-----+-----+-----+-----+
 //                         +-----+-----+-----+   +-----+-----+-----+
-//                         | LWR | GUI/| SPC |   | ENT | TAB | RSE |
+//                         | LWR | GUI | SPC |   | ENT |  <- | RSE |
 //                         +-----+-----+-----+   +-----+-----+-----+
             bindings = <
                 &kp EXCL  &kp AT    &kp HASH  &kp DLLR  &kp PRCNT      &kp CARET &kp AMPS &kp ASTRK &kp LPAR &kp RPAR
                 &kp N1    &kp N2    &kp N3    &kp N4    &kp N5         &kp N6    &kp N7   &kp N8    &kp N9   &kp N0
-                &kp LCTRL &kp LC(Z) &kp LC(X) &kp LC(C) &kp LC(V) &kp PIPE &kp FSLH &kp LBKT &kp RBKT &kp LBRC &kp RBRC &kp BSLH
-                                             &mo 2      &mt LGUI FSLH   &kp SPACE  &kp RET  &kp TAB  &mo 3
+       &kp ESC  &kp LC(Z) &kp LC(X) &kp LC(C) &kp LC(V) &kp PIPE       &kp FSLH  &kp LBKT &kp RBKT &kp LBRC &kp RBRC &kp BSLH
+                                    &mo 2     &mt LGUI  &kp SPACE      &kp RET   &kp BSPC &mo 3
             >;
         };
 
@@ -101,16 +127,16 @@
 //          +-----+-----+-----+-----+-----+         +-----+-----+-----+-----+-----+
 //          | W1  | W2  | W3  | W4  | W5  |         |MAIL |LEFT |DOWN | UP  |RIGHT|
 //    +-----+-----+-----+-----+-----+-----+         +-----+-----+-----+-----+-----+-----+
-//    |CTRL | W6  | W7  | W8  | W9  |GAME |         |PIPE |  [  |  ]  |  {  |  }  |  =  |
+//    | ESC | W6  | W7  | W8  | W9  |GAME |         |PIPE |  [  |  ]  |  {  |  }  |  =  |
 //    +-----+-----+-----+-----+-----+-----+         +-----+-----+-----+-----+-----+-----+
 //                         +-----+-----+-----+   +-----+-----+-----+
-//                         | LWR | GUI/| SPC |   | ENT | TAB | RSE |
+//                         | LWR | GUI | SPC |   | ENT |  <- | RSE |
 //                         +-----+-----+-----+   +-----+-----+-----+
             bindings = <
-                &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3      &kp CARET &kp AMPS &kp ASTRK &kp LPAR  &kp RPAR
-                &kp LG(N1) &kp LG(N2)   &kp LG(N3)   &kp LG(N4)   &kp LG(N5)        &mail_one &kp LEFT &kp DOWN  &kp UP    &kp RIGHT
-                &kp LCTRL  &kp LG(N6)   &kp LG(N7)   &kp LG(N8)   &kp LG(N9) &tog 1 &kp PIPE  &kp LBKT &kp RBKT  &kp LBRC  &kp RBRC &kp EQUAL
-                                                    &mo 2         &mt LGUI FSLH     &kp SPACE &kp RET  &kp TAB   &mo 3
+                &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3    &kp CARET &kp AMPS &kp ASTRK &kp LPAR  &kp RPAR
+                &kp LG(N1) &kp LG(N2)   &kp LG(N3)   &kp LG(N4)   &kp LG(N5)      &mail_one &kp LEFT &kp DOWN  &kp UP    &kp RIGHT
+       &kp ESC  &kp LG(N6) &kp LG(N7)   &kp LG(N8)   &kp LG(N9) &tog 1            &kp PIPE  &kp LBKT &kp RBKT  &kp LBRC  &kp RBRC &kp EQUAL
+                                            &mo 2    &kp LGUI   &kp SPACE         &kp RET   &kp BSPC  &mo 3
             >;
         };
 
