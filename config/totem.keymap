@@ -77,7 +77,7 @@
                 &kp A     &hml LCTRL O &hml LSHFT E &hml LGUI U &kp I      &kp D   &hmr LGUI H &hmr LSHFT T &hmr LCTRL N &kp S
        &kp ESC  &kp SEMI  &kp Q     &kp J   &kp K    &kp X      &kp B   &kp M    &kp W     &kp V     &kp Z  &kp MINUS
                                     &mo 2   &kp TAB  &kp SPACE  &kp RET &kp BSPC &mo 3
-            >
+            >;
         };
 
         qwerty_layer {
